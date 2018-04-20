@@ -1,0 +1,18 @@
+1. Business requirement is on the page: https://gist.github.com/bcm/3ea7df94aaed3816618bf4d5a2f76abd
+
+2. The system is designed to have several layers from top to bottom:
+    - controller: accept API request and route it to different functions
+    - service: the layer actually do the business
+    - repository: the database DAO layer
+    - entity: data class and related validator
+
+3. service and controller class has related unit test, and there is also a integration test in the com.amex.integration
+package. By running "mvn clean install", you can run the tests and generate jar file. The jar file will be generated under target directory once you run "mvn clean install".
+
+4. By using "-Dspring.profiles.active=prod" in the command "java -jar -Dspring.profiles.active=prod target/spring-boot-demo-0.0.1-SNAPSHOT.jar"
+you can switch configurations between dev, test and prod. By default, its gonna use dev env, which uses H2 in memory database.
+
+5. Performance test needs to be implemented in the future once we have performance requirement.
+
+6. The application has already been deployed to aws, can be hit via:
+    - http://amex.aceonion.com:8080/people
