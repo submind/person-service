@@ -16,3 +16,6 @@ you can switch configurations between dev, test and prod. By default, its gonna 
 
 6. The application has already been deployed to aws, can be hit via:
     - http://amex.aceonion.com:8080/people
+
+7. The age property in Person can be removed since it needs to be updated every year which is unnecessary. We can get the age
+from date of birth whenever we want to use it.
