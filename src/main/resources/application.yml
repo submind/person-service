@@ -7,7 +7,14 @@ spring:
 ---
 spring:
   profiles: dev
-datasource:
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+    hibernate: DEBUG
+
+  file: mylogfile.log
 
 ---
 spring:
